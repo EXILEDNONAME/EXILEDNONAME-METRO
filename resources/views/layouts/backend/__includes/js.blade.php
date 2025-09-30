@@ -58,6 +58,35 @@
         "font-family": "Poppins"
     };
 </script>
+<script>
+    fetch("{{ route('assets.lang') }}").then(response => {
+        return response.json();
+    }).then(data => {
+        translations = data;
+    });
+    window.translations = {
+        default: {
+            label: {
+                please_wait: "{{ __('default.label.please_wait') }}"
+            }
+        }
+    };
+</script>
+
+<script>
+    var this_url = "{{ URL::Current() }}";
+    var active = "{{ !empty($active) && $active == 'true' ? 'true' : '' }}";
+    var date = "{{ !empty($date) && $date == 'true' ? 'true' : '' }}";
+    var datetime = "{{ !empty($datetime) && $datetime == 'true' ? 'true' : '' }}";
+    var daterange = "{{ !empty($daterange) && $daterange == 'true' ? 'true' : '' }}";
+    var file = "{{ !empty($file) && $file == 'true' ? 'true' : '' }}";
+    var status = "{{ !empty($status) && $status == 'true' ? 'true' : '' }}";
+    var extensions = "{{ !empty($extension) && $extension == 'management-users' ? 'management-users' : '' }}";
+    var sort = "{{ !empty($sort) && $sort > 0 ? $sort : '1, desc' }}";
+    window.tableBodyColumns = [
+        @yield('table-body')
+    ];
+</script>
 <!--end::Global Config-->
 <!--begin::Global Theme Bundle(used by all pages)-->
 <script src="/assets/backend/plugins/global/plugins.bundle.js"></script>
@@ -69,3 +98,4 @@
 <!--begin::Page Scripts(used by this page)-->
 <script src="/assets/backend/js/pages/widgets.js"></script>
 <!--end::Page Scripts-->
+@stack('js')

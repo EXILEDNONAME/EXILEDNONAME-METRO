@@ -18,11 +18,28 @@
     <div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
         <div id="kt_aside_menu" class="aside-menu my-4" data-menu-vertical="1" data-menu-scroll="1" data-menu-dropdown-timeout="500">
             <ul class="menu-nav">
+
                 <li class="menu-item {{ (request()->is('dashboard')) ? 'menu-item-active' : '' }}"><a href="{{ url('/dashboard') }}" class="menu-link"><i class="menu-icon fas fa-desktop"></i><span class="menu-text"> Dashboard </span></a></li>
+
                 <li class="menu-section">
                     <h4 class="menu-text">Custom</h4>
                     <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
+
+                <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/applications/datatables*')) ? 'menu-item-open' : '' }}">
+                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                        <i class="menu-icon fas fa-list-ul"></i>
+                        <span class="menu-text"> Datatables </span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="menu-submenu">
+                        <ul class="menu-subnav">
+                            <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/applications/datatables/generals*')) ? 'menu-item-active' : '' }}"><a href="{{ url('/dashboard/applications/datatables/generals') }}" class="menu-link"><span class="menu-text"><i class="menu-bullet menu-bullet-dot"><span></span></i> Generals </span></a></li>
+                            <li class="menu-item menu-item-submenu {{ (request()->is('dashboard/applications/datatables/relations*')) ? 'menu-item-active' : '' }}"><a href="{{ url('/dashboard/applications/datatables/relations') }}" class="menu-link"><span class="menu-text"><i class="menu-bullet menu-bullet-dot"><span></span></i> Relations </span></a></li>
+                        </ul>
+                    </div>
+                </li>
+
             </ul>
         </div>
     </div>

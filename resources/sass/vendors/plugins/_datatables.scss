@@ -121,10 +121,10 @@ $dt-page-color-active: $white;
         tbody {
             tr.active,
             tr.selected {
-                background-color: $gray-200;
+                background-color: transparent;
 
                 th, td {
-                    background-color: $gray-200;
+                    background-color: transparent;
                     border-left-color: $gray-200;
                     border-right-color: $gray-200;
                     color: $dark-75;
