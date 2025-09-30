@@ -18,3 +18,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/templates', function () {
+    return view('layouts.backend.default');
+});
