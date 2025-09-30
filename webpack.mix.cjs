@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 
 mix.browserSync({
     proxy: 'http://localhost:8000',
@@ -7,7 +7,7 @@ mix.browserSync({
         'resources/views/**/*.blade.php',
     ],
     open: false,
-    notify: false,
+    notify: true,
     ui: false,
     injectChanges: true
 });

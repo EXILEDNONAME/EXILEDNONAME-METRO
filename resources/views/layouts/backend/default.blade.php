@@ -27,7 +27,7 @@
                     <!-- CONTENT -->
                     <div class="d-flex flex-column-fluid">
                         <div class="container-fluid">
-                            <p>Page content goes here...</p>
+                            @yield('content')
                         </div>
                     </div>
                 </div>

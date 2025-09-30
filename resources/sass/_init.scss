@@ -1,0 +1,34 @@
+//
+// Main init file of global bootstrap and theme functions, mixins, variables and config
+//
+
+
+// // Functions
+@import "base/functions";
+
+// // Mixins
+@import "base/mixins";
+
+// // Global variables
+@import "components/variables.demo";
+@import "components/variables.bootstrap";
+@import "components/variables.custom";
+
+@import "vendors/plugins/mixins";
+
+// // Bootstrap mixins
+@import "bootstrap/scss/bootstrap";
+
+// // 3rd-Party plugins variables
+@import "vendors/plugins/variables";
+@import "components/mixins";
+
+// Theme layout variables
+@import "layout/variables";
+
+@import "themes/layout/aside/dark";
+@import "themes/layout/header/base/light";
+@import "themes/layout/header/menu/light";
+@import "themes/layout/brand/dark";
+
+@import "components/utilities";
