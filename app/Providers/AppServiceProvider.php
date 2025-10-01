@@ -11,7 +11,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        require_once app_path() . '/Helpers/__System/Default.php';
+        require_once app_path() . '/Helpers/__System/Datatable.php';
+
+        require_once app_path() . '/Helpers/__Main/Default.php';
     }
 
     /**

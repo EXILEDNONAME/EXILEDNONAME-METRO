@@ -2,14 +2,8 @@
 
 @push('head')
 <link href="/assets/backend/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
-<!-- <style>
-    table.dataTable tbody > tr.selected,
-table.dataTable tbody > tr > .selected {
-  background-color:rgb(255, 255, 255) !important;
-  color: #fff !important; /* biar kontras */
-}
-</style> -->
 @endpush
+
 @section('content')
 @stack('box')
 <div class="row">
@@ -69,7 +63,7 @@ table.dataTable tbody > tr > .selected {
                         <div class="mb-2">
                             <div class="col-lg-12 my-2 my-md-0">
                                 <div class="d-flex align-items-center">
-                                    <select class="form-control filter-form filter_active">
+                                    <select class="custom-select form-control filter-form filter_active">
                                         <option value=""> - {{ __('default.select.active') }} - </option>
                                         <option value="1"> {{ __('default.label.yes') }} </option>
                                         <option value="0"> {{ __('default.label.no') }} </option>
@@ -441,8 +435,8 @@ table.dataTable tbody > tr > .selected {
                     return '' +
                         '<div class="dropdown dropdown-inline">' +
                         '<button type="button" class="btn btn-hover-light-dark btn-icon btn-xs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ki ki-bold-more-ver"></i></button>' +
-                        '<div class="dropdown-menu dropdown-menu-xs" style="">' +
-                        '<ul class="navi navi-hover py-5">' +
+                        '<div class="dropdown-menu dropdown-menu-xs border" style="max-width: 200px; width: auto;">' +
+                        '<ul class="navi navi-hover">' +
                         '<li class="navi-item"><a href="' + this_url + '/' + row.id + '" class="navi-link"><span class="navi-icon"><i class="flaticon2-expand"></i></span><span class="navi-text">' + translations.default.label.view + '</span></a></li>' +
                         '<li class="navi-item"><a href="' + this_url + '/' + row.id + '/edit" class="navi-link"><span class="navi-icon"><i class="flaticon2-contract"></i></span><span class="navi-text">' + translations.default.label.edit + '</span></a></li>' +
                         '<li class="navi-item"><a href="javascript:void(0);" class="navi-link delete" data-id="' + row.id + '"><span class="navi-icon"><i class="flaticon2-trash"></i></span><span class="navi-text">' + translations.default.label.delete.delete + '</span></a></li>' +

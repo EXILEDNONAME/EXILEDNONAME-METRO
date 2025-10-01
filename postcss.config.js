@@ -60,17 +60,22 @@ export default {
         /^next/,
         /^disabled/,
         /^ki-/,
-        
+        /^swal2-container/,
+        /^swal2-center/,
+        /^swal2-backdrop-show/,
+        /^swal2-shown/,
+        /^swal2-height-auto/,
+
         // Bootstrap table
-    /^table/,
-    /^table-sm/,
-    /^table-bordered/,
-    /^table-striped/,
-    /^table-hover/,
-    /^table-responsive/,
-    /^table-head-custom/,
-    /^table-checkable/,
-    /^table-separate/,
+        /^table/,
+        /^table-sm/,
+        /^table-bordered/,
+        /^table-striped/,
+        /^table-hover/,
+        /^table-responsive/,
+        /^table-head-custom/,
+        /^table-checkable/,
+        /^table-separate/,
         /^dataTable/,
         /^selected/,
         /^odd/,
@@ -78,11 +83,28 @@ export default {
         /^td/,
         /^th/,
         /^tbody/,
+        /^toast/,
+        /^toast-success/,
+        /^toast-bottom-right/,
+        /^toast-message/,
+        /^custom-select/,
+        /^align-self-end/,
+        /^h-100px/,
+        /^mobile-toggle-active/,
+        /^topbar-mobile-on/,
         
-        
-        
+        /^dropdown-menu/,
+        /^dropdown-menu-xs/,
+        /^navi/,
+        /^navi-hover/,
+        /^navi-item/,
 
-        /^kt-/
+        /^aside-overlay/,
+        /^aside-on/,
+        /^header-menu-wrapper-overlay/,
+        /^header-menu-wrapper-on/,
+
+        /^ kt -/
       ],
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || []
     })

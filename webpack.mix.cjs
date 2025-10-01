@@ -7,7 +7,7 @@ mix.browserSync({
         'resources/views/**/*.blade.php',
     ],
     open: false,
-    notify: true,
+    notify: false,
     ui: false,
     injectChanges: true
 });

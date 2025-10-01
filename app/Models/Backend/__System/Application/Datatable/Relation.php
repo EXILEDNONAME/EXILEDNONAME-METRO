@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Backend\__System\Filter;
+namespace App\Models\Backend\__System\Application\Datatable;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class StatusFilter extends Model
+class Relation extends Model
 {
     use HasFactory, LogsActivity, SoftDeletes;
 
-    protected $table = 'system_status_filters';
+    protected $table = 'system_application_table_relations';
     protected $primaryKey = 'id';
     protected $guarded = ['id'];
     protected static $logAttributes = ['*'];
@@ -21,5 +21,14 @@ class StatusFilter extends Model
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()->logOnly(['*']);
+    }
+
+    public function application_table_general()
+    {
+        return $this->belongsTo(
+            \App\Models\Backend\__System\Application\Datatable\General::class,
+            'id_table_general',
+            'id'
+        );
     }
 }

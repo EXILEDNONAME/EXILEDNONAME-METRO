@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @include('layouts.backend.__includes.head')
 
 <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
@@ -17,12 +16,7 @@
                 </div>
 
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-                    <div class="subheader py-2 py-lg-6 subheader-solid" id="kt_subheader">
-                        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
-                            @include('layouts.backend.__includes.subheader-breadcrumb')
-                            @include('layouts.backend.__includes.subheader-action')
-                        </div>
-                    </div>
+                    @include('layouts.backend.__includes.subheader')
 
                     <!-- CONTENT -->
                     <div class="d-flex flex-column-fluid">
@@ -35,14 +29,7 @@
             </div>
         </div>
     </div>
-
-    @include('layouts.backend.__includes.canvas-user')
-    @include('layouts.backend.__includes.canvas-cart')
-    @include('layouts.backend.__includes.canvas-panel')
-    @include('layouts.backend.__includes.canvas-chat')
     @include('layouts.backend.__includes.scroll-top')
-    @include('layouts.backend.__includes.sticky-toolbar')
-
     @include('layouts.backend.__includes.js')
 </body>
 

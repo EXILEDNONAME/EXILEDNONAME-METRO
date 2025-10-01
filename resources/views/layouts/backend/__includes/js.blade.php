@@ -99,3 +99,38 @@
 <script src="/assets/backend/js/pages/widgets.js"></script>
 <!--end::Page Scripts-->
 @stack('js')
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-bottom-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+    };
+</script>
+
+@if ($message = Session::get('success'))
+<script>
+    toastr.success('{{ $message }}');
+</script>
+@endif
+@if ($message = Session::get('error'))
+<script>
+    toastr.error('{{ $message }}');
+</script>
+@endif
+
+<script>
+    $(function() {
+        $('[title]').tooltip({
+            placement: 'top', // atau 'bottom', 'left', 'right'
+            trigger: 'hover'
+        });
+    });
+</script>
