@@ -1,3 +1,4 @@
 {
-    "/mix/js/plugins.bundle.js": "/mix/js/plugins.bundle.js"
+    "/mix/js/plugins.js": "/mix/js/plugins.js",
+    "/mix/js/plugins.min.js": "/mix/js/plugins.min.js"
 }
