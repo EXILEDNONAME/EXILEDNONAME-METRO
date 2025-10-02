@@ -11,3 +11,7 @@ mix.browserSync({
     ui: false,
     injectChanges: true
 });
+
+// mix.js("resources/js/metronic/components/app.js", "mix/js/plugins.bundle.min.js");
+
+mix.js("resources/js/metronic/plugins.js", "public/mix/js/plugins.bundle.js");
