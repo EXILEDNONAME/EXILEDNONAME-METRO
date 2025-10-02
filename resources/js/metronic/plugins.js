@@ -17,6 +17,11 @@ window.toastr = toastr;
 import PerfectScrollbar from "perfect-scrollbar";
 window.PerfectScrollbar = PerfectScrollbar;
 
+import "block-ui/jquery.blockUI.js";
+
+import Swal from "sweetalert2";
+window.Swal = window.swal = Swal;
+
 // Tooltip init
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();

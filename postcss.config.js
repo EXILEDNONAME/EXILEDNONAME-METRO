@@ -65,6 +65,10 @@ export default {
         /^swal2-backdrop-show/,
         /^swal2-shown/,
         /^swal2-height-auto/,
+        /^swal2-popup/,
+        /^swal2-modal/,
+        /^swal2-icon-warning/,
+        /^swal2-show/,
 
         // Bootstrap table
         /^table/,
@@ -103,6 +107,13 @@ export default {
         /^aside-on/,
         /^header-menu-wrapper-overlay/,
         /^header-menu-wrapper-on/,
+
+        /^blockUI/,
+        /^blockMsg/,
+        /^blockElement/,
+        /^blockui/,
+        /^spinner/,
+        /^spinner-primary/,
 
         /^ kt -/
       ],

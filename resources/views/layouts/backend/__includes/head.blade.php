@@ -18,4 +18,10 @@
     @stack('head')
 
     <link rel="shortcut icon" href="/assets/backend/media/logos/favicon.ico" />
+    
+    <style>
+        body.swal2-shown.swal2-height-auto {
+            height: 100% !important;
+        }
+    </style>
 </head>

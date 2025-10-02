@@ -87,9 +87,7 @@
         @yield('table-body')
     ];
 </script>
-<script src="/mix/js/plugins.bundle.js"></script>
-<!--end::Global Config-->
-<!--begin::Global Theme Bundle(used by all pages)-->
+<script src="/mix/js/plugins.min.js"></script>
 <!-- <script src="/assets/backend/plugins/global/plugins.bundle.js"></script> -->
 <script src="/assets/backend/plugins/custom/prismjs/prismjs.bundle.js"></script>
 <script src="/assets/backend/js/scripts.bundle.js"></script>
