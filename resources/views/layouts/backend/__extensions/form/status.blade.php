@@ -7,10 +7,10 @@
         $items = DB::table('system_status_filters')->where('name', $statusName)->first();
         $attributes = json_decode($items->properties ?? '[]', true);
         @endphp
-        {{ Html::select('status', $attributes, (isset($data->status) ? $data->status : ''))->class($errors->has('status') ? 'form-control is-invalid' : 'form-control')->placeholder('- ' . __("default.select.status") . ' -')->required() }}
+        {{ Html::select('status', $attributes, (isset($data->status) ? $data->status : ''))->class($errors->has('status') ? 'custom-select form-control is-invalid' : 'custom-select form-control')->placeholder('- ' . __("default.select.status") . ' -')->required() }}
         @error('status') {{ Html::span()->text($message)->class('invalid-feedback') }} @enderror
         @else
-        {{ Html::select('status')->class($errors->has('status') ? 'form-control is-invalid' : 'form-control')->placeholder('- ' . __("default.select.status") . ' -')->required() }}
+        {{ Html::select('status')->class($errors->has('status') ? 'custom-select form-control is-invalid' : 'custom-select form-control')->placeholder('- ' . __("default.select.status") . ' -')->required() }}
         @endif
     </div>
 </div>

@@ -77,7 +77,7 @@
                         <div class="mb-2">
                             <div class="col-lg-12 my-2 my-md-0">
                                 <div class="d-flex align-items-center">
-                                    <select data-column="2" class="form-control filter-form filter_status">
+                                    <select data-column="2" class="custom-select form-control filter-form filter_status">
                                         <option value=""> - {{ __('default.select.status') }} - </option>
                                         @foreach ($attributes as $key => $label)
                                         <option value="{{ $key }}">
@@ -145,10 +145,10 @@
                         <thead>
                             <tr>
                                 <th class="no-export"></th>
-                                <th style="display: none"> {{ __('default.label.created_at') }} </th>
+                                <th class="no-export" style="display: none"> {{ __('default.label.created_at') }} </th>
                                 <th> No. </th>
                                 @if (!empty($status) && $status == 'true') <th> {{ __('default.label.status') }} </th> @endif
-                                @if (!empty($file) && $file == 'true') <th> {{ __('default.label.file') }} </th> @endif
+                                @if (!empty($file) && $file == 'true') <th class="no-export"> {{ __('default.label.file') }} </th> @endif
                                 @if (!empty($date) && $date == 'true') <th> {{ __('default.label.date') }} </th> @endif
                                 @if (!empty($daterange) && $daterange == 'true')
                                 <th> {{ __('default.label.date-start') }} </th>
@@ -178,7 +178,7 @@
 @endsection
 
 @push('js')
-<script src="/assets/backend/plugins/custom/datatables/datatables.bundle.js"></script>
+<script src="/mix/js/datatable.js"></script>
 
 <!-- LOADER -->
 <script>
@@ -226,10 +226,10 @@
         },
         headerCallback: function(thead, data, start, end, display) {
             thead.getElementsByTagName('th')[0].innerHTML = `
-    <label class="checkbox checkbox-single checkbox-solid checkbox-primary mb-0">
-      <input type="checkbox" value="" class="group-checkable"/>
-      <span></span>
-    </label>`;
+            <label class="checkbox checkbox-single checkbox-solid checkbox-primary mb-0">
+                <input type="checkbox" value="" class="group-checkable"/>
+                <span></span>
+            </label>`;
         },
         "lengthMenu": [
             [25, 100, 250, 500],
@@ -787,6 +787,72 @@
         });
     });
 
+    // FILTER DATE
+    $('#date').change(function() {
+        var card = new KTCard('exilednoname_card');
+        KTApp.block('#exilednoname_body', {
+            overlayColor: '#ffffff',
+            type: 'loader',
+            state: 'primary',
+            message: translations.default.label.processing + ' ...',
+            opacity: 0.3,
+            size: 'lg'
+        });
+        setTimeout(function() {
+            KTApp.unblock('#exilednoname_body');
+            $('#exilednoname_table').DataTable().draw();
+        }, 500);
+    });
+
+    // FILTER DATERANGE
+    $('#date_start').change(function() {
+        var card = new KTCard('exilednoname_card');
+        KTApp.block('#exilednoname_body', {
+            overlayColor: '#ffffff',
+            type: 'loader',
+            state: 'primary',
+            message: translations.default.label.processing + ' ...',
+            opacity: 0.3,
+            size: 'lg'
+        });
+        setTimeout(function() {
+            KTApp.unblock('#exilednoname_body');
+            $('#exilednoname_table').DataTable().draw();
+        }, 500);
+    });
+
+    $('#date_end').change(function() {
+        var card = new KTCard('exilednoname_card');
+        KTApp.block('#exilednoname_body', {
+            overlayColor: '#ffffff',
+            type: 'loader',
+            state: 'primary',
+            message: translations.default.label.processing + ' ...',
+            opacity: 0.3,
+            size: 'lg'
+        });
+        setTimeout(function() {
+            KTApp.unblock('#exilednoname_body');
+            $('#exilednoname_table').DataTable().draw();
+        }, 500);
+    });
+
+    // FILTER STATUS
+    $('.filter_status').change(function() {
+        var card = new KTCard('exilednoname_card');
+        KTApp.block('#exilednoname_body', {
+            overlayColor: '#000000',
+            state: 'primary',
+            message: translations.default.label.processing + ' ...',
+        });
+        setTimeout(function() {
+            KTApp.unblock('#exilednoname_body');
+            var oTable = $('#exilednoname_table').dataTable();
+            oTable.fnDraw(false);
+        }, 500);
+        $('#exilednoname_table').DataTable().column('status:name').search(this.value).draw();
+    });
+
     // LOADER IMAGE
     ! function(t, e) {
         "object" == typeof exports && "undefined" != typeof module ? module.exports = e() : "function" == typeof define && define.amd ? define(e) : t.lozad = e()
@@ -868,6 +934,51 @@
                 $img.attr('src', $img.data('src'));
             }
         });
+    });
+
+    var KTBootstrapDatepicker = function() {
+
+        var arrows;
+        if (KTUtil.isRTL()) {
+            arrows = {
+                leftArrow: '<i class="la la-angle-right"></i>',
+                rightArrow: '<i class="la la-angle-left"></i>'
+            }
+        } else {
+            arrows = {
+                leftArrow: '<i class="la la-angle-left"></i>',
+                rightArrow: '<i class="la la-angle-right"></i>'
+            }
+        }
+
+        var datepicker = function() {
+
+            $('#ex_datepicker_date').datepicker({
+                orientation: "bottom right",
+                rtl: KTUtil.isRTL(),
+                todayHighlight: true,
+                format: 'yyyy-mm-dd',
+                templates: arrows
+            });
+
+            $('#ex_datepicker_daterange').datepicker({
+                orientation: "bottom right",
+                rtl: KTUtil.isRTL(),
+                todayHighlight: true,
+                format: 'yyyy-mm-dd',
+                templates: arrows
+            });
+        }
+
+        return {
+            init: function() {
+                datepicker();
+            }
+        };
+    }();
+
+    jQuery(document).ready(function() {
+        KTBootstrapDatepicker.init();
     });
 </script>
 @endpush

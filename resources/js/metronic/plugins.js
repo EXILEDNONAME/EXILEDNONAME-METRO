@@ -22,6 +22,8 @@ import "block-ui/jquery.blockUI.js";
 import Swal from "sweetalert2";
 window.Swal = window.swal = Swal;
 
+import "bootstrap-datepicker/dist/js/bootstrap-datepicker.js";
+
 // Tooltip init
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();

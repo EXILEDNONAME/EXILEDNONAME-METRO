@@ -22,7 +22,7 @@ trait ActivityController
                     }
                 })
                 ->editColumn('causer_id', function ($order) {
-                    return $order->causer->name;
+                    return optional($order->causer)->name ?? '-';
                 })
                 ->editColumn('updated_at', function ($order) {
                     return \Carbon\Carbon::parse($order->updated_at)->format('d F Y, H:i');

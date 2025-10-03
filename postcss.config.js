@@ -114,8 +114,27 @@ export default {
         /^blockui/,
         /^spinner/,
         /^spinner-primary/,
+        /^input-group/,
+        /^input-daterange/,
+        /^align-middle/,
+        /^text-nowrap/,
+        /^sorting/,
+        /^sorting_asc/,
+        /^paginate_button/,
+        /^page-item/,
+        /^previous/,
+        /^disabled/,
+        /^dataTables_paginate/,
+        /^paging_simple_numbers/,
+        /^page-item/,
+        /^page-link/,
+        /^label/,
+        /^label-dark/,
+        /^label-inline/,
+          /^align-middle/, 
+          /^text-nowrap/,
 
-        /^ kt -/
+        /^kt-/
       ],
       defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || []
     })

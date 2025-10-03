@@ -5,6 +5,12 @@
   */
 
 /*!
+ * Datepicker for Bootstrap v1.10.1 (https://github.com/uxsolutions/bootstrap-datepicker)
+ *
+ * Licensed under the Apache License v2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+ */
+
+/*!
  * jQuery JavaScript Library v3.7.1
  * https://jquery.com/
  *

@@ -1,4 +1,4 @@
-@extends('layouts.backend.__templates.index', ['active' => 'true', 'file' => 'true'])
+@extends('layouts.backend.__templates.index', ['active' => 'true', 'date' => 'true', 'daterange' => 'true', 'file' => 'true', 'status' => 'true'])
 @section('title', 'Datatable Generals')
 
 @section('table-header')
